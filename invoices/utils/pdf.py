@@ -31,7 +31,8 @@ def generate_invoice_pdf(invoice, copy_type='ORIGINAL'):
 
     # Invoice Details
     invoice_data = [
-        ['Invoice No:', invoice.invoice_no, 'Date:', invoice.invoice_date.strftime('%d/%m/%Y')],
+        # ['Invoice No:', invoice.invoice_no, 'Date:', invoice.invoice_date.strftime('%d/%m/%Y')],
+        ['Invoice No:', invoice.invoice_no, 'Date:', invoice.invoice_date.strftime('%Y/%m/%d')],
         ['E-Way Bill No:', invoice.e_way_bill_no or '', 'E-Invoice No:', invoice.e_invoice_no or ''],
         ['Insurance No:', invoice.insurance_no or '', 'Due Date:', invoice.due_date.strftime('%d/%m/%Y')],
         ['Mode of Payment:', invoice.mode_of_payment or '', 'Delivery Date:', invoice.delivery_date.strftime('%d/%m/%Y') if invoice.delivery_date else ''],
